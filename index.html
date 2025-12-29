@@ -3,273 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KISWA - كسوة</title>
+  <title>Mirage - ميراج</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    
-    .card {
-      background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
-      border-radius: 30px;
-      width: 100%;
-      max-width: 420px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      animation: fadeIn 0.6s ease-out;
-    }
-    
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .header {
-      background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .header::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: rotate 20s linear infinite;
-    }
-    
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    .logo {
-      width: 120px;
-      height: 120px;
-      background: white;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      position: relative;
-      z-index: 1;
-    }
-    
-    .logo-text {
-      font-size: 42px;
-      font-weight: bold;
-      background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: 2px;
-    }
-    
-    .brand-name {
-      font-size: 36px;
-      font-weight: bold;
-      color: #1a1a2e;
-      margin-bottom: 8px;
-      letter-spacing: 4px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .brand-subtitle {
-      font-size: 20px;
-      color: #2c2c2c;
-      font-weight: 500;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .content {
-      padding: 30px 25px;
-    }
-    
-    .section {
-      margin-bottom: 25px;
-    }
-    
-    .section-title {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .contact-btn {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      background: white;
-      color: #1a1a2e;
-      padding: 16px 20px;
-      margin: 10px 0;
-      border-radius: 15px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border: 2px solid transparent;
-    }
-    
-    .contact-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-      border-color: #d4af37;
-    }
-    
-    .contact-btn:active {
-      transform: translateY(0);
-    }
-    
-    .contact-btn i {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      font-size: 18px;
-      margin-left: 15px;
-    }
-    
-    .egypt { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
-    .palestine { background: linear-gradient(135deg, #27ae60, #229954); color: white; }
-    .whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: white; }
-    .facebook { background: linear-gradient(135deg, #3b5998, #2d4373); color: white; }
-    .instagram { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); color: white; }
-    
-    .btn-text {
-      flex: 1;
-      text-align: right;
-      font-size: 15px;
-    }
-    
-    .save-btn {
-      background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
-      color: white;
-      margin-top: 20px;
-      justify-content: center;
-      font-size: 16px;
-    }
-    
-    .save-btn i {
-      background: rgba(255, 255, 255, 0.2);
-      margin-left: 10px;
-      margin-right: 0;
-    }
-    
-    .divider {
-      height: 1px;
-      background: linear-gradient(to left, transparent, #ddd, transparent);
-      margin: 25px 0;
-    }
-    
-    @media (max-width: 480px) {
-      .card {
-        max-width: 100%;
-        border-radius: 20px;
-      }
-      
-      .logo {
-        width: 100px;
-        height: 100px;
-      }
-      
-      .logo-text {
-        font-size: 36px;
-      }
-      
-      .brand-name {
-        font-size: 30px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <div class="header">
-      <div class="logo">
-        <div class="logo-text">K</div>
-      </div>
-      <div class="brand-name">KISWA</div>
-      <div class="brand-subtitle">كسوة</div>
-    </div>
-    
-    <div class="content">
-      <div class="section">
-        <div class="section-title">🇪🇬 التواصل - مصر</div>
-        <a class="contact-btn" href="tel:+201017780369">
-          <i class="fas fa-phone egypt"></i>
-          <span class="btn-text">+20 101 7780369</span>
-        </a>
-        <a class="contact-btn" href="https://wa.me/201017780369">
-          <i class="fab fa-whatsapp whatsapp"></i>
-          <span class="btn-text">واتساب مصر</span>
-        </a>
+  <div class="card-container">
+    <div class="card">
+      <div class="header">
+        <div class="logo">
+          <img src="logo.jpg" alt="Mirage Logo">
+        </div>
+        <div class="brand-name">MIRAGE</div>
+        <div class="brand-subtitle">ميراج</div>
       </div>
       
-      <div class="divider"></div>
-      
-      <div class="section">
-        <div class="section-title">🇵🇸 التواصل - غزة</div>
-        <a class="contact-btn" href="tel:0599893666">
-          <i class="fas fa-phone palestine"></i>
-          <span class="btn-text">0599893666</span>
-        </a>
-        <a class="contact-btn" href="https://wa.me/972599893666">
-          <i class="fab fa-whatsapp whatsapp"></i>
-          <span class="btn-text">واتساب غزة</span>
+      <div class="content">
+        <div class="section">
+          <div class="section-title">🇪🇬 التواصل - مصر</div>
+          <a class="contact-btn" href="tel:+201017780369">
+            <i class="fas fa-phone egypt"></i>
+            <div class="btn-content">
+              <div class="btn-text">+20 101 7780369</div>
+            </div>
+          </a>
+          <a class="contact-btn" href="https://wa.me/201017780369">
+            <i class="fab fa-whatsapp whatsapp"></i>
+            <div class="btn-content">
+              <div class="btn-text">واتساب مصر</div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="section">
+          <div class="section-title">🇵🇸 التواصل - غزة</div>
+          <a class="contact-btn" href="tel:0599893666">
+            <i class="fas fa-phone palestine"></i>
+            <div class="btn-content">
+              <div class="btn-text">0599893666</div>
+            </div>
+          </a>
+          <a class="contact-btn" href="https://wa.me/972599893666">
+            <i class="fab fa-whatsapp whatsapp"></i>
+            <div class="btn-content">
+              <div class="btn-text">واتساب غزة</div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="section">
+          <div class="section-title">📱 وسائل التواصل الاجتماعي</div>
+          
+          <a class="contact-btn" href="https://www.facebook.com/MirageClothes">
+            <i class="fab fa-facebook-f facebook"></i>
+            <div class="btn-content">
+              <div class="btn-text">Mirage</div>
+              <div class="btn-label">صفحة ميراج على فيسبوك</div>
+            </div>
+          </a>
+          
+          <a class="contact-btn" href="https://www.facebook.com/kiswastore">
+            <i class="fab fa-facebook-f facebook"></i>
+            <div class="btn-content">
+              <div class="btn-text">KISWA</div>
+              <div class="btn-label">صفحة كسوة على فيسبوك</div>
+            </div>
+          </a>
+          
+          <a class="contact-btn" href="https://www.instagram.com/kiswastore/">
+            <i class="fab fa-instagram instagram"></i>
+            <div class="btn-content">
+              <div class="btn-text">@kiswastore</div>
+              <div class="btn-label">حساب كسوة على إنستجرام</div>
+            </div>
+          </a>
+        </div>
+        
+        <a class="contact-btn save-btn" href="kiswastore.vcf">
+          <i class="fas fa-download"></i>
+          <span class="btn-text">حفظ جهة الاتصال</span>
         </a>
       </div>
-      
-      <div class="divider"></div>
-      
-      <div class="section">
-        <div class="section-title">📱 وسائل التواصل الاجتماعي</div>
-        <a class="contact-btn" href="https://www.facebook.com/kiswastore">
-          <i class="fab fa-facebook-f facebook"></i>
-          <span class="btn-text">صفحتنا على فيسبوك</span>
-        </a>
-        <a class="contact-btn" href="https://www.instagram.com/kiswastore/">
-          <i class="fab fa-instagram instagram"></i>
-          <span class="btn-text">حسابنا على إنستجرام</span>
-        </a>
-      </div>
-      
-      <a class="contact-btn save-btn" href="kiswastore.vcf">
-        <i class="fas fa-download"></i>
-        <span class="btn-text">حفظ جهة الاتصال</span>
-      </a>
     </div>
   </div>
 </body>
