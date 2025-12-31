@@ -21,8 +21,6 @@ body {
 .card-container {
   width: 100%;
   max-width: 420px;
-  height: 85vh;
-  max-height: 800px;
   display: flex;
   flex-direction: column;
 }
@@ -35,7 +33,6 @@ body {
   animation: fadeIn 0.6s ease-out;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 @keyframes fadeIn {
@@ -107,8 +104,6 @@ body {
 
 .content {
   padding: 25px;
-  overflow-y: auto;
-  flex: 1;
 }
 
 .content::-webkit-scrollbar {
@@ -249,10 +244,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .card-container {
-    height: 90vh;
-  }
-  
   .card {
     border-radius: 20px;
   }
